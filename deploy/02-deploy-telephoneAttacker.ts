@@ -11,8 +11,6 @@ const deployTelephoneAttacker: DeployFunction = async (
   const { deploy, log } = deployments;
   const { deployer } = await getNamedAccounts();
 
-  log("------- Nostradamus deployment started --------");
-
   const args: any[] = [];
 
   const telephoneAttacker = await deploy("TelephoneAttacker", {

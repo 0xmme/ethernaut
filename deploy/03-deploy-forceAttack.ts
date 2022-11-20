@@ -3,7 +3,7 @@ import { DeployFunction } from "hardhat-deploy/dist/types";
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { devChains, networkConfig } from "../helper-hardhat-config";
 
-const deployCoinFlipNostradamus: DeployFunction = async (
+const deployForceAttack: DeployFunction = async (
   hre: HardhatRuntimeEnvironment
 ) => {
   // env variables
@@ -13,7 +13,7 @@ const deployCoinFlipNostradamus: DeployFunction = async (
 
   const args: any[] = [];
 
-  const coinFlipNostradamus = await deploy("CoinFlipNostradamus", {
+  const forceAttack = await deploy("ForceAttack", {
     from: deployer,
     args: args,
     log: true,
@@ -25,13 +25,13 @@ const deployCoinFlipNostradamus: DeployFunction = async (
     //verify
 
     await hre.run("verify:verify", {
-      address: coinFlipNostradamus.address,
-      contract: "contracts/CoinFlipNostradamus.sol:CoinFlipNostradamus", //Filename.sol:ClassName
+      address: forceAttack.address,
+      contract: "contracts/ForceAttack.sol:ForceAttack", //Filename.sol:ClassName
       constructorArguments: args,
     });
   }
 };
 
-export default deployCoinFlipNostradamus;
+export default deployForceAttack;
 
-deployCoinFlipNostradamus.tags = ["all", "nostradamus"];
+deployForceAttack.tags = ["all", "force"];
