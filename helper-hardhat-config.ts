@@ -51,6 +51,17 @@ export const networkConfig: networkConfigInfo = {
     raffleInterval: 30,
     usdEthPriceFeed: "0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e",
   },
+  sepolia: {
+    vrfCoordinatorV2: "",
+    blockConfirmations: 6,
+    entranceFee: ethers.utils.parseEther("0.01"),
+    gasLane: "",
+    mintFee: "0.001",
+    subscriptionId: 0,
+    callbackGasLimit: 500000,
+    raffleInterval: 30,
+    usdEthPriceFeed: "",
+  },
 };
 
 export const devChains = ["hardhat", "localhost"];
